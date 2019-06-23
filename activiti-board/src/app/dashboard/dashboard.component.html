@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="col-md-2">
+		<ul class="list-group">
+			<li class="list-group-item" 
+				*ngFor="let processDefinition of processDefinitionPaylods"
+				[class.active]="processDefinition == selectedProcessDefinition"
+				(click)="selectProcessDefinition(processDefinition)">
+				{{processDefinition.name}}
+			</li>
+		</ul>
+	</div>
+
+	<div class="col-md-2">
+		<li class="list-group-item" 
+				*ngFor="let activityInstance of activityInstancePayloads"
+				[class.active]="activityInstance == selectedActivityInstance"
+				(click)="selectActivityInstance(activityInstance)">
+				{{activityInstance.activityName}}
+			</li>
+	</div>
+
+	<div class="col-md-2">
+		<li class="list-group-item" 
+				*ngFor="let activityInstanceDetails of activityInstanceDetailsPayloads">
+				{{activityInstanceDetails.name}}
+			</li>
+	</div>
+</div>
+
